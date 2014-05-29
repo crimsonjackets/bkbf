@@ -1,0 +1,10 @@
+html
+  head
+    title Bkbf
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  body
+    header#header = render 'layouts/header'
+    = yield
+    footer#footer = render 'layouts/footer'

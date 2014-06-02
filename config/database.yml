@@ -6,3 +6,12 @@ production:
   timeout:
   username: rails
   password: jklUiop34f
+
+development:
+  adapter: postgresql
+  database: bkbf
+  encoding: unicode
+  pool: 
+  timeout:
+  username:
+  password:

@@ -6,8 +6,8 @@ set :normalize_asset_timestamps, false
 set :application, "bkbf"
 
 set :scm, :git
-# set :local_repository, "git@github.com:crimsonjackets/hyper.git"
-# set :repository, "git@github-hyper:crimsonjackets/hyper.git"
+set :local_repository, "git@github.com:crimsonjackets/bkbf.git"
+set :repository, "git@github-bkbf:crimsonjackets/bkbf.git"
 set :branch, :master
 set :deploy_via, :remote_cache
 set :ssh_options, { forward_agent: true }
@@ -59,7 +59,7 @@ namespace :deploy do
 
   desc "Start unicorn"
   task :start, :roles => :app, :except => { :no_release => true } do
-    run "cd #{current_path}; bundle exec unicorn -c config/unicorn.rb -E #{rails_env} -D -p 4005"
+    run "cd #{current_path}; bundle exec unicorn -c config/unicorn.rb -E #{rails_env} -D -p 4006"
   end
 
   desc "Stop unicorn"

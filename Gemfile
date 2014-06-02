@@ -8,9 +8,9 @@ gem 'sass-rails'
 gem 'coffee-rails'
 gem 'slim-rails'
 gem 'normalize-rails'
-
+gem 'bourbon'
+gem 'wiselinks'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 

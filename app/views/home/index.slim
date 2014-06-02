@@ -1,9 +1,20 @@
-#content
-  .slider
-    =image_tag 'web_bkbf_slide_1.jpg'
-    h2 .progressive tech
-    .message Технологическое преимущество дает возможность проихводить необходимые вам обхемы в необходимые сроки.
-  .buttons
-    .but 1
-    .but 2
-    .but 3
+- content_for(:body_id, :home)
+
+.section
+  .line
+    .slide
+      =image_tag 'web_bkbf_slide_1.jpg'
+      h2 .progressive tech
+      .message Технологическое преимущество дает возможность проихводить необходимые вам обхемы в необходимые сроки.
+    .slide
+      =image_tag 'web_bkbf_slide_1.jpg'
+      h2 .progressive tech
+      .message Технологическое преимущество дает возможность проихводить необходимые вам обхемы в необходимые сроки.
+    .slide
+      =image_tag 'web_bkbf_slide_1.jpg'
+      h2 .progressive tech
+      .message Технологическое преимущество дает возможность проихводить необходимые вам обхемы в необходимые сроки.
+.buttons
+  input.but.active type='button' value='1'
+  input.but type='button' value='2'
+  input.but type='button' value='3'

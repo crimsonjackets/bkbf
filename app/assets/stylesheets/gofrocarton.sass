@@ -1,19 +1,108 @@
-#left-column
-  width: 620px
-  margin-right: 20px
-  display: inline-block
-#right-column
-  width: 540px
-  display: inline-block
-.small-block
-  width: 260px
-  margin-right: 20px
-  margin-bottom: 24px
-.last
-  margin-right: 0
-.full-block
-  width: 100%
-  margin-bottom: 24px
-  .block-name
-    height: 60px
-    border-bottom: 1px solid #ededed
+body#carton
+  #content
+    background: $bg
+  .left-column
+    width: 620px
+    margin-right: 20px
+    display: inline-block
+    position: relative
+    vertical-align: top
+  .right-column
+    vertical-align: top
+    width: 540px
+    display: inline-block
+    position: relative
+  .small-block
+    vertical-align: top
+    width: 260px
+    margin-right: 20px
+    margin-bottom: 24px
+    background: #fff
+    display: inline-block
+    position: relative
+    &.first
+      height: 280px
+      h2
+        margin: 22px 0 0 20px
+        font:
+          family: Helvetica
+          weight: 600
+          size: 18pt
+        line-height: 125%
+        &.sm
+          margin: 27px 0 0 30px
+          font:
+            family: Helvetica
+            weight: 500
+            size: 15pt
+          width: 50%
+      .download
+        height: 30px
+        line-height: 30px
+        position: absolute
+        bottom: 5.5%
+        font-size: 14pt
+        letter-spacing: -0.8px
+        left: 5.8%
+        padding-left: 34px
+        background:
+          image: image-url('web_bkbf_download.png')
+          repeat: no-repeat
+          position: 0 50%
+      .best
+        position: absolute
+        bottom: 5.5%
+        width: 180px
+        left: 12%
+        li
+          display: block
+          padding-left: 24px
+          height: 18px
+          margin-bottom: 10px
+          font-size: 9pt
+          background:
+            repeat: no-repeat
+            position: 0 50%
+          &:nth-child(1)
+            background-image: image-url('web_bkbf_lab.png')
+          &:nth-child(2)
+            background-image: image-url('web_bkbf_shield.png')
+          &:nth-child(3)
+            background-image: image-url('web_bkbf_achive.png')
+  .last
+    margin-right: 0
+  .full-block
+    position: relative
+    width: 100%
+    margin-bottom: 24px
+    background: #fff
+    .img-name
+      margin: 0
+      color: #fff
+      position: absolute
+      top: 6.6%
+      left: 4.5%
+      letter-spacing: -0.77px
+      font:
+        family: Helvetica
+        weight: 600
+        size: 27.4pt
+    .block-name
+      height: 60px
+      line-height: 60px
+      letter-spacing: -0.1px
+      font-size: 7.6pt
+      position: relative
+      text-transform: uppercase
+      padding-left: 4%
+      border-bottom: 1px solid $bg
+    .base
+      padding: 20px 28px
+      font-size: 14pt
+      line-height: 130%
+.left-column
+  .full-block
+    .block-name
+      background: $bg2
+    .base
+      background: $bg2

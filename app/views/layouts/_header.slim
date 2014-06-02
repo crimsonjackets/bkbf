@@ -1,19 +1,21 @@
 nav
   ul
     li.logo-li
-      = image_tag 'web_bkbf_menu.png'
-      .logo
-        | боровичская
-        br
-        | картонно-бумажная
-        br
-        | фабрика
+      = link_to '/'
+        = image_tag 'web_bkbf_menu.png'
+        .logo
+          | боровичская
+          br
+          | картонно-бумажная
+          br
+          | фабрика
     li
       .num 1
       .name компания
-    li
-      .num 2
-      .name гофрокартон
+    li class="#{'active' if (yield(:body_id) == "carton")}"
+      =link_to '/gofrocarton'
+        .num 2
+        .name гофрокартон
     li
       .num 3
       .name гофроупаковка

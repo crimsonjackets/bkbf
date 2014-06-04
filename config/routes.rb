@@ -53,6 +53,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  get 'gofrocarton' => 'materials#gofrocarton'
   root 'home#index'
+  get 'gofrocarton' => 'materials#gofrocarton'
+  get 'contacts' => 'contacts#index'
 end

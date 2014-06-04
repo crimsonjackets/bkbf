@@ -5,6 +5,7 @@ html
     = javascript_include_tag 'application'
     = csrf_meta_tags
   body id="#{yield :body_id}"
+    #map
     header#header = render 'layouts/header'
     #content = yield
     footer#footer = render 'layouts/footer'

@@ -1,0 +1,53 @@
+body#contacts
+  #header
+    background: rgba(255,255,255,0.7)
+  #footer
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+  #map
+    position: absolute
+    z-index: 0
+    height: 100%
+    width: 100%
+  #content
+    position: absolute
+    height: 350px
+    bottom: 10%
+    left: 0
+    right: 0
+    background: transparent
+  #information
+    width: 100%
+    margin: 0
+    padding: 0
+    position: absolute
+    z-index: 3
+    background: transparent
+    li
+      list-style: none
+      display: inline-block
+      width: calc(33.33% - 2px)
+      height: 350px
+      background: #fff
+      vertical-align: top
+      padding: 130px 80px 0 70px
+      box-sizing: border-box
+      text-transform: uppercase
+      font-size: 0.75em
+      line-height: 170%
+      margin-right: 2px
+      position: relative
+      .num
+        position: absolute
+        top: 9px
+        left: 9px
+        font-weight: 200
+        font-size: 0.9em
+      p
+        margin: 2px 0
+      &:nth-child(2)
+        background: rgba(255,255,255,0.7)
+      &:nth-child(3)
+        background: rgba(255,255,255,0.4)

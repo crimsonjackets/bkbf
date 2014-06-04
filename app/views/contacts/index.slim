@@ -1,0 +1,40 @@
+- content_for(:body_id, :contacts)
+
+script src="http://maps.googleapis.com/maps/api/js?sensor=FALSE"
+
+javascript:
+  function initialize() {
+    var mapOptions = {
+      center: new google.maps.LatLng(58.39,33.902769),
+      zoom: 14,
+      disableDefaultUI: true,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  }
+  $(document).ready(function() {
+    initialize();
+  });
+
+ul#information
+  li
+    .num 1
+    b Контакты:
+    p
+      | 174437 П.УДИНО. НОВГОРОДСКАЯ ОБЛ.
+      br
+      | БОРОВИЧИСКОГО Р‒НА,
+      br
+      | Т:(81664) 9‒45‒18, (81664) 9‒45‒10,
+      br
+      | T/F (81664) 9‒45‒49
+  li
+    .num 2
+    b производство1:
+    p новгородская область, г.боровичи, ул.окуловская;
+    b производство2:
+    p п.удино, центральная ул. 1.
+  li
+    .num 3
+    b фабрика:
+    p 174437 п.удино, новгородская обл, боровичского района.

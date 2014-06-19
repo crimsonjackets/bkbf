@@ -22,14 +22,14 @@ nav
     li
       .num 4
       .name бумага и картон
+    li class="#{'active' if (yield(:body_id) == "contacts")}"
+      =link_to '/contacts'
+        .num 5
+        .name контакты
     li
-      .num 5
-      .name контакты
-    li
-      = link_to '/contacts'
-        .contacts
-          | Новгородская область
-          br
-          | боровичский район пос.удино
-        .tel
-          | (812) 947 21 40
+      .contacts
+        | Новгородская область
+        br
+        | боровичский район пос.удино
+      .tel
+        | (812) 947 21 40

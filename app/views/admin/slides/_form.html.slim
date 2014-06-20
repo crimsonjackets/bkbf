@@ -1,0 +1,21 @@
+= form_for [:admin, @slide], html:{class: 'form-horizontal'} do |f|
+  .form-group
+    = f.label 'Заголовок', class: "col-sm-1 control-label"
+    .col-sm-6
+      = f.text_field :title, required:'', class:"form-control"
+  .form-group
+    = f.label 'Текст', class: "col-sm-1 control-label"
+    .col-sm-6
+      = f.text_area :text, required:'', class:"form-control"
+  - if f.object.image?
+    .form-group
+      = f.label 'Текущее изображение', class: "col-sm-1 control-label"
+      .col-sm-6
+        = image_tag f.object.image.url :admin_thumb
+  .form-group
+    = f.label 'Изображение', class: "col-sm-1 control-label"
+    .col-sm-6
+      = f.file_field :image, class: "form-control"
+  .form-group
+    .col-sm-offset-1.col-sm-6
+      = f.submit 'Сохранить', class: "btn btn-primary form-control"

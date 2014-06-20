@@ -3,20 +3,15 @@
 = render 'layouts/breadcrumbs'
 .left-column
   .full-block.main-img
-    =image_tag 'web_bkbf_carton.jpg'
+    =image_tag Page.find_by(name: 'gofrocarton').image.url
     h1.img-name Гофрокартон.
   .full-block
     .block-name Гофрокартон. общая информация.
-    .base
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas justo diam, pellentesque facilisis augue non, hendrerit lacinia metus. Ut dignissim fermentum lectus et rutrum. Aenean posuere faucibus erat, vitae fermentum eros molestie sit amet. Duis placerat blandit felis pulvinar dignissim. Suspendisse mauris urna, posuere vitae molestie non, sodales eget enim. Pellentesque ipsum velit, pulvinar tempor enim et, commodo volutpat nibh. Sed eget consectetur elit. Donec quis ante est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-      p Pellentesque gravida leo venenatis, viverra sem id, tristique quam. Morbi nec neque purus. In volutpat ligula ultricies faucibus vehicula. Quisque fermentum dui in eleifend volutpat. Curabitur felis risus, commodo vel tortor et, ultricies aliquam metus. Vestibulum id augue a felis pretium dignissim et sed orci. Nam cursus ut orci ut gravida. Fusce porta elit velit, eu faucibus ligula faucibus non. Aenean blandit metus convallis, tincidunt dui non, sodales magna. Nullam vel tortor convallis eros vulputate ultrices vitae ut felis. Etiam quis placerat nibh. Vestibulum ultrices tristique nunc, in malesuada sem ultricies a.
-      p Aliquam erat lacus, fermentum sed diam ut, ultrices mollis mauris. Fusce sit amet dignissim neque, id mattis arcu. Aliquam erat volutpat. Etiam tempus venenatis tincidunt. Quisque non lobortis libero. Donec convallis suscipit sem ac mollis. Mauris lacus mi, viverra et consectetur id, dictum a velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin a lectus vitae nulla condimentum iaculis id sit amet sem.
-      p Etiam non sodales nulla, a malesuada metus. Nam ut augue feugiat, imperdiet odio luctus, pulvinar nunc. Vivamus sit amet lorem vitae ante sagittis elementum. Nam ultrices viverra tincidunt. Nulla aliquet eu risus ut dapibus. Integer convallis sem diam, nec tristique ante blandit et. Morbi sed ornare dolor. Ut vestibulum, dui vestibulum tempus semper, velit diam convallis metus, et luctus dui turpis ac neque. Curabitur placerat sapien eros, non congue tortor faucibus consectetur. Cras rutrum nec felis ac auctor. Sed ultrices malesuada odio, sit amet ultricies justo malesuada non.
-      p Cras pulvinar sem vel adipiscing malesuada. Mauris faucibus sagittis risus quis volutpat. Fusce porttitor eros mi, et sollicitudin nulla faucibus a. Phasellus ultricies faucibus iaculis. Vivamus cursus velit sem, sed ultricies justo placerat ac. Quisque id ante sapien. Suspendisse potenti. Donec consectetur enim nisl, sit amet vehicula quam interdum vitae. Aliquam suscipit eget ante non porttitor.
+    .base == Page.find_by(name: 'gofrocarton').text_block_1
 .right-column
   .small-block.first
     h2 Цены и характеристики гофрокартона.
-    .download Скачать
+    .download = link_to 'Скачать', Page.find_by(name: 'gofrocarton').file.url
   .small-block.first.last
     h2.sm
       | БКБФ - современные технологии и&nbsp;проверенные механизмы.
@@ -26,6 +21,4 @@
       li Специалисты высшей категории.
   .full-block
     .block-name гофрокартон бкбф
-    .base
-      p Etiam non sodales nulla, a malesuada metus. Nam ut augue feugiat, imperdiet odio luctus, pulvinar nunc. Vivamus sit amet lorem vitae ante sagittis elementum. Nam ultrices viverra tincidunt. Nulla aliquet eu risus ut dapibus. Integer convallis sem diam, nec tristique ante blandit et. Morbi sed ornare dolor. Ut vestibulum, dui vestibulum tempus semper, velit diam convallis metus, et luctus dui turpis ac neque. Curabitur placerat sapien eros, non congue tortor faucibus consectetur. Cras rutrum nec felis ac auctor. Sed ultrices malesuada odio, sit amet ultricies justo malesuada non.
-      p Cras pulvinar sem vel adipiscing malesuada. Mauris faucibus sagittis risus quis volutpat. Fusce porttitor eros mi, et sollicitudin nulla faucibus a. Phasellus ultricies faucibus iaculis. Vivamus cursus velit sem, sed ultricies justo placerat ac. Quisque id ante sapien. Suspendisse potenti. Donec consectetur enim nisl, sit amet vehicula quam interdum vitae. Aliquam suscipit eget ante non porttitor.
+    .base == Page.find_by(name: 'gofrocarton').text_block_2

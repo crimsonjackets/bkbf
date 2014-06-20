@@ -7,11 +7,17 @@ production:
   username: rails
   password: jklUiop34f
 
+# development:
+#   adapter: postgresql
+#   database: bkbf
+#   encoding: unicode
+#   pool: 
+#   timeout:
+#   username:
+#   password:
+
 development:
-  adapter: postgresql
-  database: bkbf
-  encoding: unicode
-  pool: 
-  timeout:
-  username:
-  password:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000

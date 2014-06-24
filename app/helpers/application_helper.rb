@@ -1,7 +1,5 @@
 module ApplicationHelper
   def nav_active path
-    if request.path == path
-      return "active"
-    end
+    (request.path == path) ? "active" : nil
   end
 end

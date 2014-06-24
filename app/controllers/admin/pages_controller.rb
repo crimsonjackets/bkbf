@@ -1,14 +1,13 @@
 class Admin::PagesController < AdminController
+  before_action :find_page, only: [:edit, :update, :destroy]
   def index
     @pages = Page.all
   end
 
   def edit
-    @page = Page.find params[:id]
   end
 
   def update
-    @page = Page.find params[:id]
     if @page.update(page_params)
       redirect_to admin_pages_path
     else
@@ -17,11 +16,15 @@ class Admin::PagesController < AdminController
   end
 
   def destroy
-    Page.find(params[:id]).destroy
+    @page.destroy
     redirect_to admin_pages_path
   end
 
   private
+    def find_page
+      @page = Page.find params[:id]
+    end
+
     def page_params
       params.require(:page).permit(:image, :title, :file, :text_block_1, :text_block_2)
     end

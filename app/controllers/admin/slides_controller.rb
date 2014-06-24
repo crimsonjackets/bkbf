@@ -1,4 +1,5 @@
 class Admin::SlidesController < AdminController
+  before_action :find_slide, only: [:edit, :update, :destroy]
   def index
     @slides = Slide.all
   end
@@ -17,11 +18,9 @@ class Admin::SlidesController < AdminController
   end
 
   def edit
-    @slide = Slide.find params[:id]
   end
 
   def update
-    @slide = Slide.find params[:id]
     if @slide.update(slide_params)
       redirect_to admin_slides_path
     else
@@ -30,11 +29,14 @@ class Admin::SlidesController < AdminController
   end
 
   def destroy
-    Slide.find(params[:id]).destroy
+    @slide.destroy
     redirect_to admin_slides_path
   end
 
   private
+    def find_slide
+      @slide = Slide.find params[:id]
+    end
     def slide_params
       params.require(:slide).permit(:image, :title, :text)
     end

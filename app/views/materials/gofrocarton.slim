@@ -3,15 +3,15 @@
 = render 'layouts/breadcrumbs'
 .left-column
   .full-block.main-img
-    =image_tag Page.find_by(name: 'gofrocarton').image.url
+    =image_tag @page.image.url
     h1.img-name Гофрокартон.
   .full-block
     .block-name Гофрокартон. общая информация.
-    .base == Page.find_by(name: 'gofrocarton').text_block_1
+    .base == @page.text_block_1
 .right-column
   .small-block.first
     h2 Цены и характеристики гофрокартона.
-    .download = link_to 'Скачать', Page.find_by(name: 'gofrocarton').file.url
+    .download = link_to 'Скачать', @page.file.url
   .small-block.first.last
     h2.sm
       | БКБФ - современные технологии и&nbsp;проверенные механизмы.
@@ -21,4 +21,4 @@
       li Специалисты высшей категории.
   .full-block
     .block-name гофрокартон бкбф
-    .base == Page.find_by(name: 'gofrocarton').text_block_2
+    .base == @page.text_block_2

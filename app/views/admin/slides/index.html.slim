@@ -1,0 +1,18 @@
+h2 Слайды
+table.table
+  thead
+    th Изображение
+    th Заголовок
+    th Дополнительный текст
+    th.text-center colspan="2" Действия
+  - @slides.each do |slide|
+    tr
+      td = image_tag slide.image.url :admin_thumb
+      td = slide.title
+      td = slide.text
+      td = link_to "Редактировать", edit_admin_slide_path(slide)
+      td
+        a= link_to "Удалить", [:admin, slide], method: :delete, data: { confirm: "Подтверждаете удаление?" }
+br
+- unless Slide.all.count >= 3
+  = link_to 'Добавить слайд', new_admin_slide_path, class: "btn btn-primary"

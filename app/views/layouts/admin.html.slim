@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title Панель администратора
+    = stylesheet_link_tag    "admin", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "admin", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+    nav.navbar.navbar-default role="navigation" 
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button" 
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand href="/" BKBF
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li class=nav_active('/admin/slides')
+              a href="/admin/slides" Слайдер
+            li class=nav_active('/admin/pages')
+              a href="/admin/pages" Страницы
+            
+
+    .container
+      = yield

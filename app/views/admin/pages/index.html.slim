@@ -1,0 +1,13 @@
+h2 Страницы
+table.table
+  thead
+    th ID
+    th Изображение
+    th Заголовок
+    th Действия
+  - @pages.each do |page|
+    tr
+      td = page.id
+      td = image_tag page.image.url(:admin_thumb)
+      td = page.title
+      td = link_to "Редактировать", edit_admin_page_path(page)

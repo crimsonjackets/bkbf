@@ -2,18 +2,14 @@
 
 .section
   .line
-    .slide
-      =image_tag 'web_bkbf_slide_1.jpg'
-      h2 .progressive tech
-      .message Технологическое преимущество дает возможность проихводить необходимые вам обхемы в необходимые сроки.
-    .slide
-      =image_tag 'web_bkbf_slide_1.jpg'
-      h2 .progressive tech
-      .message Технологическое преимущество дает возможность проихводить необходимые вам обхемы в необходимые сроки.
-    .slide
-      =image_tag 'web_bkbf_slide_1.jpg'
-      h2 .progressive tech
-      .message Технологическое преимущество дает возможность проихводить необходимые вам обхемы в необходимые сроки.
+    - @slides.each do |slide|
+      .slide
+        =image_tag slide.image.url(:slide)
+        h2=slide.title
+        .message= simple_format slide.text
+    / =image_tag 'web_bkbf_slide_1.jpg'
+    / h2 .progressive tech
+    / .message Технологическое преимущество дает возможность проихводить необходимые вам обхемы в необходимые сроки.
 .buttons
   input.but.active type='button' value='1'
   input.but type='button' value='2'

@@ -33,6 +33,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'pry-byebug'
+  gem 'annotate'
 end
 
 

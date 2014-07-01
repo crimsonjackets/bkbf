@@ -1,0 +1,25 @@
+- content_for(:body_id, @page.name.to_sym)
+
+= render 'layouts/breadcrumbs'
+
+.left-column
+  .full-block.main-img
+    =image_tag @page.image.url
+    h1.img-name= @page.title
+  .full-block
+    .block-name #{@page.title}. общая информация.
+    .base == @page.text_block_1
+.right-column
+  .small-block.first
+    h2 Цены и характеристики.
+    = link_to 'Скачать', @page.file.url, class: 'download'
+  .small-block.first.last
+    h2.sm
+      | БКБФ - современные технологии и&nbsp;проверенные механизмы.
+    ul.best
+      li Своя лаборатория.
+      li Сертификация.
+      li Специалисты высшей категории.
+  .full-block
+    .block-name #{@page.title} бкбф
+    .base == @page.text_block_2

@@ -9,19 +9,22 @@ nav
           | картонно-бумажная
           br
           | фабрика
-    li
-      .num 1
-      .name компания
-    li class="#{'active' if (yield(:body_id) == "carton")}"
+    li class="#{'active' if (yield(:body_id) == "company")}"
+      =link_to '/company'
+        .num 1
+        .name компания
+    li class="#{'active' if (yield(:body_id) == "gofrocarton")}"
       =link_to '/gofrocarton'
         .num 2
         .name гофрокартон
-    li
-      .num 3
-      .name гофроупаковка
-    li
-      .num 4
-      .name бумага и картон
+    li class="#{'active' if (yield(:body_id) == "gofropack")}"
+      =link_to '/gofropack'
+        .num 3
+        .name гофроупаковка
+    li class="#{'active' if (yield(:body_id) == "carton_paper")}"
+      =link_to '/carton_paper'
+        .num 4
+        .name бумага и картон
     li class="#{'active' if (yield(:body_id) == "contacts")}"
       =link_to '/contacts'
         .num 5

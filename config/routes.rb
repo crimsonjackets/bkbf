@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root 'home#index'
-  get 'gofrocarton' => 'materials#gofrocarton'
+  # TODO: remove if not need
+  # get 'gofrocarton' => 'materials#gofrocarton'
   get 'contacts' => 'contacts#index'
 
   namespace :admin do
@@ -9,4 +10,6 @@ Rails.application.routes.draw do
     resources :slides
     resources :pages
   end
+
+  get ':page_name' => 'pages#show'
 end

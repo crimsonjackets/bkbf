@@ -1,13 +1,13 @@
 require "rvm/capistrano"
 require 'bundler/capistrano'
-set :rvm_ruby_string, "2.1.0"
+set :rvm_ruby_string, "2.0.0"
 set :assets_role, :app
 set :normalize_asset_timestamps, false
 set :application, "bkbf"
 
 set :scm, :git
 set :local_repository, "git@github.com:crimsonjackets/bkbf.git"
-set :repository, "git@github-bkbf:crimsonjackets/bkbf.git"
+set :repository, "git@github.com:crimsonjackets/bkbf.git"
 set :branch, :master
 set :deploy_via, :remote_cache
 set :ssh_options, { forward_agent: true }
@@ -18,9 +18,9 @@ set :shared_children,   %w(public/system public/files public/uploads log tmp/pid
 set :use_sudo,  false
 
 task :production do
-  role :web, "188.226.244.217"
-  role :app, "188.226.244.217"
-  role :db,  "188.226.244.217", primary: true
+  role :web, "5.101.98.245"
+  role :app, "5.101.98.245"
+  role :db,  "5.101.98.245", primary: true
 
   set :branch, :master
   set :deploy_to, "/home/rails/#{application}"
@@ -28,15 +28,16 @@ task :production do
 end
 
 # Just for fun
-##after 'deploy' do
-#   #`say Master, deployed complete!`
-#end
+after 'deploy' do
+  `say Master, deployed complete!`
+end
 
 set :keep_releases, 3
 before "db:symlink", "deploy:setup_config"
 after "deploy:update", "deploy:cleanup"
 after "deploy:update_code", "db:symlink"
 before "deploy:assets:precompile", "deploy:setup_config", "db:symlink"
+before "bundle:install", "deploy:pg_config"
 
 namespace :db do
   desc "Make symlink for database yaml"
@@ -59,11 +60,15 @@ namespace :deploy do
 
   desc "Start unicorn"
   task :start, :roles => :app, :except => { :no_release => true } do
-    run "cd #{current_path}; bundle exec unicorn -c config/unicorn.rb -E #{rails_env} -D -p 4006"
+    run "cd #{current_path}; bundle exec unicorn -c config/unicorn.rb -E #{rails_env} -D"
   end
 
   desc "Stop unicorn"
   task :stop, :roles => :app, :except => { :no_release => true } do
     run "kill -s QUIT `cat #{shared_path}/pids/unicorn.pid`"
+  end
+
+  task :pg_config, :roles => :app do
+    run "cd #{release_path}; bundle config build.pg --with-pg-config=/usr/pgsql-9.3/bin/pg_config"
   end
 end

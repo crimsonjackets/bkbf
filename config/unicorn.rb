@@ -8,7 +8,7 @@ preload_app true
 
 pid File.join(shared, 'pids/unicorn.pid')
 
-# listen File.join(shared, 'sockets/unicorn.sock'), backlog: 1024
+listen File.join(shared, 'sockets/unicorn.bkbf.sock')
 
 working_directory File.expand_path(File.join(shared, '../current'))
 

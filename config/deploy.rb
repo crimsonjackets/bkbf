@@ -60,7 +60,7 @@ namespace :deploy do
 
   desc "Start unicorn"
   task :start, :roles => :app, :except => { :no_release => true } do
-    run "cd #{current_path}; bundle exec unicorn -c config/unicorn.rb -E #{rails_env} -D"
+    run "cd #{current_path}; bundle exec unicorn -c config/unicorn.rb -E #{rails_env} -D "
   end
 
   desc "Stop unicorn"

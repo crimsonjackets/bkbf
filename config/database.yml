@@ -1,17 +1,17 @@
 production:
   adapter: postgresql
-  database: bkbf
+  database: bkbf_production
   encoding: unicode
   pool:
   timeout:
   username: rails
-  password: jklUiop34f
+  password: bkbf3245
 
 # development:
 #   adapter: postgresql
 #   database: bkbf
 #   encoding: unicode
-#   pool: 
+#   pool:
 #   timeout:
 #   username:
 #   password:

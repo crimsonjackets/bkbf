@@ -11,6 +11,14 @@ javascript:
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    $('#information li').eq(1).click( function() {
+      var point = new google.maps.LatLng(58.385340,33.844582);
+      map.setOptions({center: point, zoom: 16});
+    });
+    $('#information li').eq(2).click( function() {
+      var point = new google.maps.LatLng(58.658253,34.315600);
+      map.setOptions({center: point, zoom: 16});
+    });
   }
   $(document).ready(function() {
     initialize();
@@ -19,22 +27,25 @@ javascript:
 ul#information
   li
     .num 1
-    b Контакты:
+    b Офис:
     p
-      | 174437 П.УДИНО. НОВГОРОДСКАЯ ОБЛ.
+      | 174437, поселок Удино, ул. Центральная д.1,
       br
-      | БОРОВИЧИСКОГО Р‒НА,
+      |  Боровичский р-н., Новгородская область
       br
-      | Т:(81664) 9‒45‒18, (81664) 9‒45‒10,
+      | +7 (81664) 9-45-10, +7 (81664) 9-45-18
       br
-      | T/F (81664) 9‒45‒49
+      | +7 (81664) 9-45-49
+      br
+      | info@bkbf.su
   li
     .num 2
-    b производство1:
+    b Производство бумаги и картона
     p новгородская область, г.боровичи, ул.окуловская;
-    b производство2:
-    p п.удино, центральная ул. 1.
   li
     .num 3
-    b фабрика:
-    p 174437 п.удино, новгородская обл, боровичского района.
+    b Производство гофрокартона и упаковки:
+    p
+      | 174437, поселок Удино, ул. Центральная д.1,
+      br
+      |  Боровичский р-н., Новгородская область

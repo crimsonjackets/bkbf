@@ -11,13 +11,21 @@ javascript:
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    myLatlng = new google.maps.LatLng(58.385340,33.844582);
     $('#information li').eq(1).click( function() {
-      var point = new google.maps.LatLng(58.385340,33.844582);
-      map.setOptions({center: point, zoom: 16});
+      map.setOptions({center: myLatlng, zoom: 15});
     });
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map
+    });
+    myLatlng2 = new google.maps.LatLng(58.658253,34.315600);
     $('#information li').eq(2).click( function() {
-      var point = new google.maps.LatLng(58.658253,34.315600);
-      map.setOptions({center: point, zoom: 16});
+      map.setOptions({center: myLatlng2, zoom: 15});
+    });
+    var marker2 = new google.maps.Marker({
+      position: myLatlng2,
+      map: map
     });
   }
   $(document).ready(function() {

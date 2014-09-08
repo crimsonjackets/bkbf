@@ -7,3 +7,5 @@ $ ->
       , 200
       $(@).parents('.buttons').find('.active').removeClass('active')
       $(@).addClass 'active'
+    $('.full-block .base *').css
+      'line-height': ''

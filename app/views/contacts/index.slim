@@ -12,6 +12,9 @@ javascript:
     };
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
     myLatlng = new google.maps.LatLng(58.385340,33.844582);
+    $('#information li').eq(0).click( function() {
+      map.setOptions({center: myLatlng, zoom: 15});
+    });
     $('#information li').eq(1).click( function() {
       map.setOptions({center: myLatlng, zoom: 15});
     });

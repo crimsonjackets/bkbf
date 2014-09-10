@@ -2,24 +2,63 @@
 
 = render 'layouts/breadcrumbs'
 
+
 .left-column
   .full-block.main-img
     =image_tag @page.image.url
     h1.img-name= @page.title
   .full-block
-    .block-name #{@page.title}
+    .block-name
+      - if @page.name != 'company'
+        | #{@page.title}
+      - else
+        | История компании
     .base == @page.text_block_1
 .right-column
-  .small-block.first
-    h2 БКБФ Сегодня
-    = link_to 'Скачать', @page.file.url, class: 'download'
-  .small-block.first.last
-    h2.sm
-      | БКБФ - современные технологии и&nbsp;проверенные механизмы.
-    ul.best
-      li Своя лаборатория.
-      li Сертификация.
-      li Специалисты высшей категории.
+  - if @page.name != 'company'
+    .small-block.first
+      h2 БКБФ Сегодня
+      = link_to 'Скачать', @page.file.url, class: 'download'
+    .small-block.first.last
+      h2.sm
+        | БКБФ - современные технологии и&nbsp;проверенные механизмы.
+      ul.best
+        li Своя лаборатория.
+        li Сертификация.
+        li Специалисты высшей категории.
+  - else
+    .full-block style="height: 280px"
+      .base
+        p
+          strong
+            span style="font-size:22px" Боровичская Картонно-Бумажная Фабрика сегодня.
+        p &nbsp;
+        / p
+          / span style="font-size:16px" На данный момент, мы являемся единственным предприятием в России, которое &nbsp;перерабатывает многослойный пищевой картон, что благоприятно сказывается на экологии и развивает рынок вторсырья в нашей стране.
+        table border="0" cellpadding="0" cellspacing="0" class="count-table" style=""
+          tbody
+            tr
+              td
+                div class="in-count" 105
+              td
+                div class="in-count" 2
+              td
+                div class="in-count" 3
+            tr
+              td
+                p
+                  span style="font-size:12px" Лет опыта в бумажной отрасли
+              td
+                p
+                  span style="font-size:12px" Высокотехнологичных производства
+              td
+                p
+                  span style="font-size:12px" Гектара леса в сутки сохраняется&nbsp;
+                  span style="font-size:12px" благодаря нашему предприятию
   .full-block
-    .block-name #{@page.title}
+    .block-name
+      - if @page.name != 'company'
+        | #{@page.title}
+      - else
+        | Описание
     .base == @page.text_block_2
